@@ -1,0 +1,78 @@
+.container {
+  width: 95%;
+  margin: 10px;
+  position: relative;
+}
+
+/* Dropdown menu */
+.dropdown {
+  margin-top: 8px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: 0.3s;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.dropdown::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.dropdown {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.dropdownItem {
+  padding: 14px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.dropdownItem:hover {
+  transform: scale(1.05);
+}
+
+/* Searchbar */
+.searchContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 40px;
+  box-shadow: rgba(149, 157, 165, 0.15) 0px 4px 24px;
+}
+
+.searchBar {
+  text-align: center;
+  padding: 8px 0px;
+  width: 60%;
+  font-size: 20px;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.icon:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+/* theme toggle button */
+.toggleTheme {
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}

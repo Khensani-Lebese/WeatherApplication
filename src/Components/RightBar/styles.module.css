@@ -1,0 +1,96 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* height: 100vh; */
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 75%;
+  }
+}
+
+.heading {
+  margin-left: 50px;
+}
+
+/*Today Card */
+.todayData {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.todayCard {
+  height: 120px;
+  width: 90%;
+  margin: 6px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  padding: 2px;
+}
+
+@media (min-width: 1200px) {
+  .todayCard {
+    padding: 4px;
+    height: 150px;
+    width: calc((100% - 80px) / 4);
+    font-size: 22px;
+  }
+}
+
+.cardData {
+  padding-left: 14px;
+  font-size: 18px;
+}
+
+/* Forecast Cards Container */
+.forecast {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.forecastCard {
+  height: 180px;
+  width: calc((100% - 60px) / 3);
+  margin: 10px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .forecastCard {
+    width: calc((100% - 80px) / 3);
+  }
+}
+
+.forecastImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardTitle {
+  font-size: 18px;
+  margin: 8px;
+  padding: 6px;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .cardTitle {
+    font-size: 22px;
+  }
+}
