@@ -1,0 +1,146 @@
+// Main Application
+InitializeApp()
+    LoadSettings()
+    InitializeUI()
+    CheckLocationPermissions()
+    If LocationPermissionGranted
+        FetchCurrentLocation()
+        DisplayWeatherForLocation(CurrentLocation)
+    Else
+        PromptUserForLocationAccess()
+    EndIf
+    DisplaySavedLocations()
+    SetUpNotifications()
+    MonitorUserActions()
+
+// Load app settings (theme, units)
+LoadSettings()
+    LoadTheme()
+    LoadDisplayUnits()
+
+// Initialize User Interface
+InitializeUI()
+    CreateMainScreen()
+    CreateWeatherDisplaySection()
+    CreateNavigationBar()
+    CreateSettingsMenu()
+    CreateLocationSearchBar()
+    CreateHourlyDailySwitch()
+    CreateWeatherAlertsSection()
+
+// Check if location permissions are granted
+CheckLocationPermissions()
+    If UserHasNotGrantedPermission
+        PromptUserForPermission()
+    EndIf
+
+// Fetch and display current location weather
+FetchCurrentLocation()
+    GetDeviceLocation()
+    DisplayWeatherForLocation(CurrentLocation)
+
+// Display weather for a specific location
+DisplayWeatherForLocation(location)
+    weatherData = FetchWeatherData(location)
+    UpdateWeatherDisplay(weatherData)
+
+// Fetch weather data from API
+FetchWeatherData(location)
+    // API Call to get current weather data
+    Return APIResponse
+
+// Display saved locations
+DisplaySavedLocations()
+    savedLocations = GetSavedLocations()
+    For Each location In savedLocations
+        DisplayLocationWeather(location)
+    EndFor
+
+// Set up notifications for severe weather alerts
+SetUpNotifications()
+    // Subscribe to weather alerts
+    EnablePushNotifications()
+
+// Monitor user actions and interact with UI elements
+MonitorUserActions()
+    While AppIsRunning
+        If UserSearchesForLocation
+            SearchLocation()
+            DisplayWeatherForLocation(SearchedLocation)
+        EndIf
+
+        If UserSwitchesToHourlyView
+            DisplayHourlyForecast()
+        EndIf
+
+        If UserSwitchesToDailyView
+            DisplayDailyForecast()
+        EndIf
+
+        If UserSavesNewLocation
+            SaveNewLocation()
+        EndIf
+
+        If UserChangesSettings
+            UpdateSettings()
+        EndIf
+    EndWhile
+
+// Search for a location
+SearchLocation()
+    query = GetSearchQuery()
+    location = FetchLocationFromQuery(query)
+    DisplayWeatherForLocation(location)
+
+// Display hourly weather forecast
+DisplayHourlyForecast()
+    hourlyData = FetchHourlyData()
+    UpdateWeatherDisplay(hourlyData)
+
+// Display daily weather forecast
+DisplayDailyForecast()
+    dailyData = FetchDailyData()
+    UpdateWeatherDisplay(dailyData)
+
+// Save a new location
+SaveNewLocation()
+    location = GetNewLocation()
+    AddLocationToSavedList(location)
+
+// Update settings
+UpdateSettings()
+    newTheme = GetNewTheme()
+    newUnits = GetNewDisplayUnits()
+    SaveSettings(newTheme, newUnits)
+
+// Fetch weather data from API (hourly or daily)
+FetchHourlyData()
+    Return HourlyAPIResponse
+
+FetchDailyData()
+    Return DailyAPIResponse
+
+// Update weather display section
+UpdateWeatherDisplay(data)
+    UpdateTemperatureDisplay(data.temperature)
+    UpdateHumidityDisplay(data.humidity)
+    UpdateWindSpeedDisplay(data.windSpeed)
+
+// Handle user settings customization
+LoadTheme()
+    // Load and apply user’s selected theme
+
+LoadDisplayUnits()
+    // Load and apply user’s selected display units
+
+// Offline access (cached data)
+FetchCachedWeatherData(location)
+    If DataIsAvailable
+        Return CachedData
+    Else
+        Return FetchWeatherData(location) // Fallback to online data
+
+// Privacy and security
+ProtectUserData()
+    EncryptUserData()
+    ComplyWithPrivacyLaws()
