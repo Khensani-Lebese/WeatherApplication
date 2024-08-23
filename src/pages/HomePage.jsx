@@ -1,4 +1,3 @@
-// src/pages/HomePage.js
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
@@ -8,10 +7,9 @@ import Forecast from '../components/Forecast';
 import TemperatureToggle from '../components/TemperatureToggle';
 import { getCurrentWeather, getForecast } from '../services/WeatherService';
 import { saveLocation } from '../utils/localStorage';
-import { Link } from 'react-router-dom';
 
-const HomePage = () => {
-  const [location, setLocation] = useState('New York');
+const HomePage = ({ theme, toggleTheme }) => {
+  const [location, setLocation] = useState('Pretoria');
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
   const [unit, setUnit] = useState('C');
@@ -50,13 +48,14 @@ const HomePage = () => {
 
   return (
     <div>
-      <Header />
+      <Header 
+        onSaveLocation={handleSaveLocation} 
+        location={location} 
+        theme={theme}
+        toggleTheme={toggleTheme}
+      />
       <SearchBar onSearch={handleSearch} />
       <TemperatureToggle unit={unit} toggleUnit={toggleUnit} />
-      <button onClick={handleSaveLocation}>Save Location</button>
-      <Link to="/saved-locations">
-        <button>View Saved Locations</button>
-      </Link>
       {weather && (
         <WeatherOverview
           location={weather.location.name}

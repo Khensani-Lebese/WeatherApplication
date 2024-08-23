@@ -1,14 +1,27 @@
 // src/components/WeatherDetails.js
 import React from 'react';
+import styled from 'styled-components';
+
+const WeatherDetailsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+`;
+
+const Detail = styled.p`
+  margin: 5px 0;
+`;
+
 
 const WeatherDetails = ({ humidity, windSpeed, feelsLike, visibility }) => {
   return (
-    <div>
-      <p>Humidity: {humidity}%</p>
-      <p>Wind Speed: {windSpeed} km/h</p>
-      <p>Feels Like: {feelsLike}°</p>
-      <p>Visibility: {visibility} km</p>
-    </div>
+    <WeatherDetailsContainer>
+      <Detail>Humidity: {humidity}%</Detail>
+      <Detail>Wind Speed: {windSpeed} km/h</Detail>
+      <Detail>Feels Like: {feelsLike}°</Detail>
+      <Detail>Visibility: {visibility} km</Detail>
+      </WeatherDetailsContainer>
   );
 };
 

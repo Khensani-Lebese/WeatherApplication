@@ -1,10 +1,9 @@
-// src/components/GlobalStyles.js
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   body {
-    background: ${({ theme }) => theme.body};
+    background-color: ${({ theme }) => theme.background};
     color: ${({ theme }) => theme.text};
-    transition: all 0.50s linear;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 `;

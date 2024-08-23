@@ -1,20 +1,25 @@
-// src/components/ThemeSwitcher.js
 import React from 'react';
 import styled from 'styled-components';
 
-const Switcher = styled.button`
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  padding: 5px 10px;
+const Button = styled.button`
+  padding: 5px;
+  margin-left: 10px; /* Space between search bar and theme switcher */
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 4px;
   cursor: pointer;
+
+  &:hover {
+    background: #0056b3;
+  }
 `;
 
 const ThemeSwitcher = ({ theme, toggleTheme }) => {
   return (
-    <Switcher onClick={toggleTheme}>
-      {theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
-    </Switcher>
+    <Button onClick={toggleTheme}>
+      {theme === 'light' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+    </Button>
   );
 };
 
