@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
-  padding: 5px;
-  margin-left: 10px; /* Space between search bar and theme switcher */
+  padding: 10px;
+  
   border: none;
   background: #007bff;
   color: white;
