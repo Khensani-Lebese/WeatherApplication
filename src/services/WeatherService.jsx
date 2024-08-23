@@ -1,8 +1,8 @@
-// src/services/WeatherService.js
 import axios from 'axios';
 
-const API_KEY = 'f1b963cd4b164abd86b170123241508';
+const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 const BASE_URL = 'http://api.weatherapi.com/v1';
+console.log('API_KEY:', API_KEY);
 
 const cacheWeatherData = (key, data) => {
   const cachedData = {
